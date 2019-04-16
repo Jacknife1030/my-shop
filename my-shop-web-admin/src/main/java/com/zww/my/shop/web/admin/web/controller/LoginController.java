@@ -32,4 +32,10 @@ public class LoginController{
            return "redirect:/main";
        }
     }
+
+    @RequestMapping(value = "loginout",method = RequestMethod.GET)
+    public String loginout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return login();
+    }
 }
